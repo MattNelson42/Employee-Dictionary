@@ -69,14 +69,14 @@ namespace Employee_Dictionary
             string alertTitle, alertMessage;
             if (!string.IsNullOrEmpty(txtFirstName.Text))
             {
-                var newBook = new Employee { FirstName = txtFirstName.Text,
+                var newEmployee = new Employee { FirstName = txtFirstName.Text,
                     LastName = txtLastName.Text, JobTitle = txtJobTitle.Text, OfficeNum = txtOfficeNum.Text,
                     MobileNum = txtMobileNum.Text, Email = txtEmail.Text, ManagerName = txtManagerName.Text, 
                     ManagerPhone = txtManagerPhone.Text
                 };
 
                 var db = new SQLiteConnection(filePath);
-                db.Insert(newBook);
+                db.Insert(newEmployee);
 
                 alertTitle = "Success";
                 alertMessage = string.Format("Employee added succesfully!");
